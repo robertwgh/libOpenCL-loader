@@ -1,0 +1,3 @@
+[submodule "dlfcn-win32"]
+	path = dlfcn-win32
+	url = git@github.com:dlfcn-win32/dlfcn-win32.git
