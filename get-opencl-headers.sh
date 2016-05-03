@@ -42,8 +42,8 @@ for VERSION in 10 11 12 20 21; do
         fi 
 done
 
-echo "  Linking default CL folder to OpenCL 1.1..." 
+echo "  Linking default CL folder to OpenCL 1.2..." 
 cd "${DIR}"
 if [ -d "CL" ]; then rm CL; fi
-ln -s CL11 CL
+ln -s CL12 CL
 echo "  Done!"; echo " ";

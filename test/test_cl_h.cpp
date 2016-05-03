@@ -18,14 +18,13 @@
  #endif
 
 #include <iostream>
-using namespace std;
 
 int main(int argc, char* argv[])
 {
     int err = clLoaderInit();
     if(err)
     {
-        cout << "Failed to init CL loader, err code: " << err << std::endl;
+        std::cout << "Failed to init CL loader, err code: " << err << std::endl;
         return -1;
     }
 
@@ -34,10 +33,10 @@ int main(int argc, char* argv[])
     cl_uint num_platforms;
     error = clGetPlatformIDs(10, platform_ids, &num_platforms);
     if (error != CL_SUCCESS) {
-        cout << "something went wrong, errorcode " << error << endl;
+        std::cout << "something went wrong, errorcode " << error << std::endl;
         return -1;
     }
-    cout << "num platforms: " << num_platforms << endl;
+    std::cout << "num platforms: " << num_platforms << std::endl;
 
     return 0;
 }

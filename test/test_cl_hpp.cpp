@@ -28,17 +28,17 @@
 #include <fstream>
 #include <string>
 #include <vector>
-//using namespace cl;
  
 int main() {
     
     int err = clLoaderInit();
     if(err)
     {
-        cout << "Failed to init CL loader, err code: " << err << std::endl;
+       std::cout << "Failed to init CL loader, err code: " << err << std::endl;
         return -1;
     }
     
+    std::cout << "Performing vector addition, please wait ..." << std::endl;
     
     // Create the two input vectors
     const int LIST_SIZE = 1000;
