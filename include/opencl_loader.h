@@ -24,12 +24,13 @@
 #define CL_LOADER_FAILED_REG_ATEXIT -12003
 
 namespace OpenCLHelper {
-class CL_LOADER_EXPORT Loader {
-public:
+class CL_LOADER_EXPORT Loader
+{
+ public:
     static int Init();
     static void Exit();
     static const std::string& GetLibPath();
 };
-} // namespace OpenCL
+}  // namespace OpenCLHelper
 
-#endif // ENABLE_OPENCL
+#endif  // ENABLE_OPENCL

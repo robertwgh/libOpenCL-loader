@@ -6,3 +6,5 @@ lib/*
 *.so
 *.o
 *.o.d
+libs
+obj

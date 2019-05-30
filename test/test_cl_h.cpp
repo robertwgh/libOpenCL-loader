@@ -13,15 +13,14 @@
 
 #define ENABLE_OPENCL 1
 
-#include "opencl_loader.h"
 #include <CL/cl.hpp>
 #include <iostream>
+#include "opencl_loader.h"
 
 int main(int argc, char* argv[])
 {
     cl_int err = OpenCLHelper::Loader::Init();
-    if(err)
-    {
+    if (err) {
         std::cout << "Failed to init CL loader, err code: " << err << std::endl;
         return -1;
     }
@@ -38,4 +37,3 @@ int main(int argc, char* argv[])
 
     return 0;
 }
-
