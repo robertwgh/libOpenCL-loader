@@ -1,4 +1,8 @@
 build/**
 bin/**
-include/CL*
 get-opencl-headers.sh
+lib/*
+.DS_Store
+*.so
+*.o
+*.o.d

@@ -1,5 +1,5 @@
 /******************************************************************************
-* Copyright (c) 2015-2016 Robert (Guohui) Wang
+* Copyright (c) 2015-2018 Robert (Guohui) Wang
 *
 * Project:    A Cross-platform OpenCL Dynamic Library Loader
 * File:       testCLLoader.cpp
@@ -7,21 +7,14 @@
 * License:    Apache License Version 2.0.
 *
 * Revisions:  April 30 2016 -Initial version.
+              December 2018 -Updated version.
 ******************************************************************************/
 
-#include "cl_loader.h"
+#define ENABLE_OPENCL 1
 
-//#define __NO_STD_VECTOR
+#include "opencl_loader.h"
 #define __CL_ENABLE_EXCEPTIONS
-// Note: if <CL/cl.h> is already included in libopencl_loader.h, therefore, 
-// if we use cl.h, here we don't need to include any OpenCL header. Howerver, 
-// if the cl.hpp header is used, we should include it after the 
-// libopencl_loader.h.
- #if defined(__APPLE__) || defined(__MACOSX)
- #include <OpenCL/cl.hpp>
- #else
- #include <CL/cl.hpp>
- #endif
+#include <CL/cl.hpp>
 
 #include <utility>
 #include <iostream>
@@ -31,7 +24,7 @@
  
 int main() {
     
-    int err = clLoaderInit();
+    cl_int err = OpenCLHelper::Loader::Init();
     if(err)
     {
        std::cout << "Failed to init CL loader, err code: " << err << std::endl;

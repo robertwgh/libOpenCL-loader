@@ -1,5 +1,5 @@
 /******************************************************************************
-* Copyright (c) 2015-2016 Robert (Guohui) Wang
+* Copyright (c) 2015-2018 Robert (Guohui) Wang
 *
 * Project:      A Cross-platform OpenCL Dynamic Library Loader
 * File:         test_cl_h.cpp
@@ -8,20 +8,18 @@
 * License:      Apache License Version 2.0.
 *
 * Revisions:    April 30 2016 -Initial version.
+                December 2018 -Updated version.
 ******************************************************************************/
 
-#include "cl_loader.h"
- #if defined(__APPLE__) || defined(__MACOSX)
- #include <OpenCL/cl.h>
- #else
- #include <CL/cl.h>
- #endif
+#define ENABLE_OPENCL 1
 
+#include "opencl_loader.h"
+#include <CL/cl.hpp>
 #include <iostream>
 
 int main(int argc, char* argv[])
 {
-    int err = clLoaderInit();
+    cl_int err = OpenCLHelper::Loader::Init();
     if(err)
     {
         std::cout << "Failed to init CL loader, err code: " << err << std::endl;
