@@ -59,9 +59,10 @@ main(int argc, char** argv)
 cd projects/macos
 ./build.sh
 # run the test
-./bin/test_cl_h
-./bin/test_cl_hpp
-./bin/clinfo -v
+#../../bin/test_cl_h
+#../../bin/test_cl_hpp
+#../../bin/clinfo -v
+./runtest.sh
 ```
 
 ### Android
