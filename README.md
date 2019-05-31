@@ -16,8 +16,8 @@ It is pretty straighforward to use this library. First, include `#include "openc
 #include "opencl_loader.h"
 #define __CL_ENABLE_EXCEPTIONS
 #include <CL/cl.hpp>
-int
-main(int argc, char** argv)
+
+int main(int argc, char** argv)
 {
     // Check if OpenCL is available in this system.
     cl_int err = OpenCLHelper::Loader::Init();
