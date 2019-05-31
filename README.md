@@ -56,6 +56,7 @@ main(int argc, char** argv)
 ## Build
 ### MacOS X
 ```bash
+cd projects/macos
 ./build.sh
 # run the test
 ./bin/test_cl_h
@@ -66,7 +67,7 @@ main(int argc, char** argv)
 ### Android
 Install ndk first, 
 ```bash
-cd android
+cd projects/android
 ndk-build
 # then use the following scripts to run the code on an Android phone. 
 # please connect the Android phone to the computer using a USB cable first. 
